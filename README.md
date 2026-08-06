@@ -2,7 +2,7 @@
 
 Interactive, hand-authored career roadmaps for 64+ tech and non-tech roles. Tools, frameworks, and skills — in the order you actually need them.
 
-**Live Demo:** [roadmapx-rosy.vercel.app](https://roadmapx-rosy.vercel.app)
+**Live Demo:** [roadmapx-rosy.vercel.app](https://roadmapx.vercel.app)
 
 ## Features
 
