@@ -68,7 +68,7 @@ export default function Home() {
       {/* Hero */}
       <section className="hero-mesh" style={{ position: "relative", overflow: "hidden" }}>
         <div className="noise-overlay" style={{ position: "absolute", inset: 0 }} />
-        <div style={{ ...containerWide, position: "relative", zIndex: 10, paddingTop: 112, paddingBottom: 96 }}>
+        <div className="hero-section container-px" style={{ ...containerWide, position: "relative", zIndex: 10, paddingTop: 112, paddingBottom: 96 }}>
           {/* Badge */}
           <div className="badge-shimmer" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 16px", borderRadius: 999, background: "var(--accent-light)", border: "1px solid color-mix(in srgb, var(--accent) 20%, transparent)", marginBottom: 32 }}>
             <span className="animate-pulse-soft" style={{ width: 8, height: 8, borderRadius: 999, background: "var(--accent)" }} />
@@ -76,14 +76,14 @@ export default function Home() {
           </div>
 
           {/* Heading */}
-          <h1 style={{ fontSize: "clamp(40px, 6vw, 72px)", fontWeight: 900, letterSpacing: "-0.02em", lineHeight: 1.05, marginBottom: 24, maxWidth: 700 }}>
+          <h1 style={{ fontSize: "clamp(32px, 6vw, 72px)", fontWeight: 900, letterSpacing: "-0.02em", lineHeight: 1.05, marginBottom: 24, maxWidth: 700 }}>
             Your next role.
             <br />
             <span className="gradient-text">Mapped out.</span>
           </h1>
 
           {/* Subtitle */}
-          <p style={{ fontSize: 18, color: "var(--muted)", maxWidth: 520, marginBottom: 40, lineHeight: 1.7 }}>
+          <p className="hero-subtitle" style={{ fontSize: 18, color: "var(--muted)", maxWidth: 520, marginBottom: 40, lineHeight: 1.7 }}>
             Concise roadmaps for {roadmapMeta.length} roles. Tools, frameworks, and skills — in the order you actually need them.
           </p>
 
@@ -91,7 +91,8 @@ export default function Home() {
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 48 }}>
             <Link
               href="/roadmaps"
-              style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 32px", borderRadius: 16, background: "var(--accent)", color: "white", fontSize: 16, fontWeight: 600, textDecoration: "none", boxShadow: "0 10px 30px color-mix(in srgb, var(--accent) 25%, transparent)", transition: "all 0.2s" }}
+              className="btn-cta"
+              style={{ background: "var(--accent)", color: "white", boxShadow: "0 10px 30px color-mix(in srgb, var(--accent) 25%, transparent)" }}
             >
               Browse Roadmaps
               <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -100,7 +101,8 @@ export default function Home() {
             </Link>
             <Link
               href="/roadmaps"
-              style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 32px", borderRadius: 16, border: "1px solid var(--card-border)", fontSize: 16, fontWeight: 500, color: "var(--foreground)", textDecoration: "none", transition: "all 0.2s" }}
+              className="btn-cta-secondary"
+              style={{ border: "1px solid var(--card-border)", color: "var(--foreground)" }}
             >
               View All {roadmapMeta.length}
             </Link>
@@ -122,8 +124,8 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section style={{ ...containerWide, paddingTop: 80, paddingBottom: 112 }}>
-        <div className="stagger-children" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+      <section className="section-padding" style={{ ...containerWide, paddingTop: 80, paddingBottom: 112 }}>
+        <div className="stagger-children grid-4" style={{ gap: 20 }}>
           {features.map((f) => (
             <div key={f.title} className="group" style={{ padding: 24, borderRadius: 16, border: "1px solid var(--card-border)", background: "var(--card)", transition: "all 0.3s" }}>
               <div className="group-hover:bg-accent group-hover:text-white" style={{ width: 40, height: 40, borderRadius: 12, background: "var(--accent-light)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--accent)", marginBottom: 16, transition: "all 0.3s" }}>
@@ -137,8 +139,8 @@ export default function Home() {
       </section>
 
       {/* Featured Roadmaps */}
-      <section style={{ ...containerWide, paddingBottom: 112 }}>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 40 }}>
+      <section className="section-padding" style={{ ...containerWide, paddingBottom: 112 }}>
+        <div className="featured-header" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 40 }}>
           <div>
             <h2 style={{ fontSize: 30, fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 4 }}>Start Here</h2>
             <p style={{ fontSize: 14, color: "var(--muted)" }}>Popular paths to get you going</p>
@@ -153,7 +155,7 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-        <div className="stagger-children" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div className="stagger-children grid-featured" style={{ gap: 20 }}>
           {featuredMeta.map((r) => (
             <Link
               key={r.id}
@@ -197,8 +199,8 @@ export default function Home() {
 
       {/* Stats */}
       <section style={{ borderTop: "1px solid var(--card-border)", borderBottom: "1px solid var(--card-border)", background: "color-mix(in srgb, var(--card) 50%, transparent)" }}>
-        <div style={{ ...containerWide, padding: "64px 24px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 48 }}>
+        <div className="stats-section" style={{ ...containerWide, padding: "64px 24px" }}>
+          <div className="grid-stats" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 48 }}>
             <div style={{ textAlign: "center" }}>
               <div className="gradient-text" style={{ fontSize: 48, fontWeight: 900, marginBottom: 8 }}>{roadmapMeta.length}</div>
               <div style={{ fontSize: 14, color: "var(--muted)" }}>Career Paths</div>
@@ -221,18 +223,19 @@ export default function Home() {
 
       {/* CTA Banner */}
       <section style={{ ...containerWide, padding: "80px 24px" }}>
-        <div style={{ position: "relative", overflow: "hidden", borderRadius: 24, background: "linear-gradient(135deg, var(--accent), #2563eb, #4f46e5)", padding: "64px 40px", textAlign: "center" }}>
+        <div className="cta-banner" style={{ position: "relative", overflow: "hidden", borderRadius: 24, background: "linear-gradient(135deg, var(--accent), #2563eb, #4f46e5)", padding: "64px 40px", textAlign: "center" }}>
           <div className="noise-overlay" style={{ position: "absolute", inset: 0, opacity: 0.3 }} />
           <div style={{ position: "relative", zIndex: 10 }}>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 900, color: "white", letterSpacing: "-0.02em", marginBottom: 16 }}>
+            <h2 style={{ fontSize: "clamp(24px, 4vw, 40px)", fontWeight: 900, color: "white", letterSpacing: "-0.02em", marginBottom: 16 }}>
               Ready to start learning?
             </h2>
-            <p style={{ color: "#bfdbfe", fontSize: 18, maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.6 }}>
+            <p style={{ color: "#bfdbfe", fontSize: 18, maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.6, padding: "0 16px" }}>
               Pick a roadmap and start building your skills today. No accounts, no paywalls — just clear paths forward.
             </p>
             <Link
               href="/roadmaps"
-              style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 32px", borderRadius: 16, background: "white", color: "var(--accent)", fontSize: 16, fontWeight: 700, textDecoration: "none", boxShadow: "0 10px 30px rgba(0,0,0,0.2)", transition: "all 0.2s" }}
+              className="btn-cta"
+              style={{ background: "white", color: "var(--accent)", boxShadow: "0 10px 30px rgba(0,0,0,0.2)", fontWeight: 700 }}
             >
               Browse All Roadmaps
               <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -245,7 +248,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ background: "var(--background)" }}>
-        <div style={{ ...containerWide, padding: "40px 24px", display: "flex", flexDirection: "column", gap: 20 }}>
+        <div className="container-px" style={{ ...containerWide, padding: "40px 24px", display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 8 }}>
             <span style={{ fontSize: 12, color: "var(--muted)" }}>
               © 2026 Copyright by{" "}

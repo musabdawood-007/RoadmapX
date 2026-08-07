@@ -73,7 +73,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+        <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 4 }}>
           <Link href="/" style={navLink(isHome)}>Home</Link>
           <Link href="/roadmaps" style={navLink(isBrowse)}>Browse</Link>
           <button onClick={toggle} style={{ ...themeBtn, marginLeft: 8 }} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
@@ -88,13 +88,38 @@ export default function Navbar() {
               </svg>
             )}
           </button>
-          {/* Mobile hamburger */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} style={{ ...themeBtn, display: "none" }} aria-label="Toggle menu">
+        </div>
+
+        {/* Mobile hamburger */}
+        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          <button onClick={toggle} style={themeBtn} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
+            {theme === "dark" ? (
+              <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            ) : (
+              <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
+          <button className="hamburger-btn" onClick={() => setMobileOpen(!mobileOpen)} style={{ ...themeBtn, display: "none" }} aria-label="Toggle menu">
             <svg style={{ width: 20, height: 20 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
             </svg>
           </button>
         </div>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
+        <Link href="/" style={{ ...navLink(isHome), width: "100%", textAlign: "center", padding: "12px 16px" }}>
+          Home
+        </Link>
+        <Link href="/roadmaps" style={{ ...navLink(isBrowse), width: "100%", textAlign: "center", padding: "12px 16px" }}>
+          Browse
+        </Link>
       </div>
     </nav>
   );

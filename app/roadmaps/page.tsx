@@ -76,7 +76,7 @@ export default function RoadmapsPage() {
     <div style={{ minHeight: "100vh" }}>
       {/* Header */}
       <div style={{ borderBottom: "1px solid var(--card-border)", background: "color-mix(in srgb, var(--card) 50%, transparent)" }}>
-        <div style={{ ...container, padding: "48px 24px" }}>
+        <div className="container-px" style={{ ...container, padding: "48px 24px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "var(--muted)", marginBottom: 16 }}>
             <Link href="/" style={{ color: "inherit", textDecoration: "none" }}>Home</Link>
             <svg style={{ width: 12, height: 12 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -84,14 +84,14 @@ export default function RoadmapsPage() {
             </svg>
             <span style={{ color: "var(--foreground)" }}>Browse</span>
           </div>
-          <h1 style={{ fontSize: 36, fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 8 }}>Browse Roadmaps</h1>
+          <h1 style={{ fontSize: "clamp(28px, 5vw, 36px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 8 }}>Browse Roadmaps</h1>
           <p style={{ fontSize: 14, color: "var(--muted)", maxWidth: 480 }}>
             {roadmapMeta.length} career paths across {categories.length - 1} categories. Find the right path for your next move.
           </p>
         </div>
       </div>
 
-      <div style={{ ...container, padding: "32px 24px 80px" }}>
+      <div className="container-px" style={{ ...container, padding: "32px 24px 80px" }}>
         {/* Filters */}
         <div style={{ marginBottom: 24 }}>
           {/* Search */}
@@ -110,17 +110,17 @@ export default function RoadmapsPage() {
           </div>
 
           {/* Category + Difficulty */}
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <div className="filter-row" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", flex: 1 }}>
               {categories.map((c) => (
-                <button key={c} onClick={() => setCategory(c)} style={filterBtn(category === c, true)}>
+                <button key={c} onClick={() => setCategory(c)} className="btn-filter" style={filterBtn(category === c, true)}>
                   {c}
                 </button>
               ))}
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {difficulties.map((d) => (
-                <button key={d} onClick={() => setDifficulty(d)} style={filterBtn(difficulty === d)}>
+                <button key={d} onClick={() => setDifficulty(d)} className="btn-filter" style={filterBtn(difficulty === d)}>
                   {d}
                 </button>
               ))}
@@ -146,7 +146,7 @@ export default function RoadmapsPage() {
         </div>
 
         {/* Grid */}
-        <div className="stagger-children" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div className="stagger-children grid-3" style={{ gap: 20 }}>
           {filtered.map((r) => (
             <Link key={r.id} href={`/roadmap/${r.id}`} style={card}>
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 20 }}>
@@ -191,7 +191,8 @@ export default function RoadmapsPage() {
             </p>
             <button
               onClick={() => { setSearch(""); setCategory("All"); setDifficulty("All"); }}
-              style={{ padding: "10px 20px", borderRadius: 12, background: "var(--accent)", color: "white", fontSize: 14, fontWeight: 500, border: "none", cursor: "pointer" }}
+              className="btn-cta"
+              style={{ background: "var(--accent)", color: "white", border: "none", cursor: "pointer" }}
             >
               Clear all filters
             </button>
