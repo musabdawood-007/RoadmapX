@@ -316,6 +316,14 @@ body {
   display: flex;
 }
 
+/* Nav visibility defaults (desktop) */
+.desktop-nav {
+  display: flex;
+}
+.mobile-controls {
+  display: none;
+}
+
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }

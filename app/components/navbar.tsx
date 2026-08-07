@@ -73,7 +73,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 4 }}>
+        <div className="desktop-nav" style={{ alignItems: "center", gap: 4 }}>
           <Link href="/" style={navLink(isHome)}>Home</Link>
           <Link href="/roadmaps" style={navLink(isBrowse)}>Browse</Link>
           <button onClick={toggle} style={{ ...themeBtn, marginLeft: 8 }} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
@@ -91,7 +91,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile controls */}
-        <div className="mobile-controls" style={{ display: "none", alignItems: "center", gap: 4 }}>
+        <div className="mobile-controls" style={{ alignItems: "center", gap: 4 }}>
           <button onClick={toggle} style={themeBtn} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
             {theme === "dark" ? (
               <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
