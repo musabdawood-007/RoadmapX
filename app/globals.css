@@ -301,19 +301,31 @@ body {
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 56px;
+  top: 57px;
   left: 0;
   right: 0;
   bottom: 0;
   background: var(--background);
-  z-index: 40;
-  padding: 24px;
+  z-index: 45;
+  padding: 16px 24px;
   flex-direction: column;
   gap: 8px;
   overflow-y: auto;
+  border-top: 1px solid var(--card-border);
 }
 .mobile-menu.open {
   display: flex;
+}
+.mobile-menu a {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.2s;
 }
 
 /* Nav visibility defaults (desktop) */

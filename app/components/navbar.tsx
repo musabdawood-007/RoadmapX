@@ -114,10 +114,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
-        <Link href="/" style={{ ...navLink(isHome), width: "100%", textAlign: "center", padding: "12px 16px" }}>
+        <Link href="/" style={{ display: "block", width: "100%", padding: "14px 16px", borderRadius: 12, fontSize: 16, fontWeight: 500, color: isHome ? "var(--accent)" : "var(--foreground)", background: isHome ? "var(--accent-light)" : "transparent", textDecoration: "none", transition: "all 0.2s" }}>
           Home
         </Link>
-        <Link href="/roadmaps" style={{ ...navLink(isBrowse), width: "100%", textAlign: "center", padding: "12px 16px" }}>
+        <Link href="/roadmaps" style={{ display: "block", width: "100%", padding: "14px 16px", borderRadius: 12, fontSize: 16, fontWeight: 500, color: isBrowse ? "var(--accent)" : "var(--foreground)", background: isBrowse ? "var(--accent-light)" : "transparent", textDecoration: "none", transition: "all 0.2s" }}>
           Browse
         </Link>
       </div>
