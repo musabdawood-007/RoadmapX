@@ -90,8 +90,8 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile hamburger */}
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+        {/* Mobile controls */}
+        <div className="mobile-controls" style={{ display: "none", alignItems: "center", gap: 4 }}>
           <button onClick={toggle} style={themeBtn} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
             {theme === "dark" ? (
               <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -104,7 +104,7 @@ export default function Navbar() {
               </svg>
             )}
           </button>
-          <button className="hamburger-btn" onClick={() => setMobileOpen(!mobileOpen)} style={{ ...themeBtn, display: "none" }} aria-label="Toggle menu">
+          <button onClick={() => setMobileOpen(!mobileOpen)} style={themeBtn} aria-label="Toggle menu">
             <svg style={{ width: 20, height: 20 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
             </svg>

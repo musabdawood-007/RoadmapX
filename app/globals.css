@@ -368,7 +368,7 @@ body {
   .desktop-nav {
     display: none !important;
   }
-  .hamburger-btn {
+  .mobile-controls {
     display: flex !important;
   }
 
