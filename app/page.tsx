@@ -66,28 +66,29 @@ const containerWide: React.CSSProperties = {
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh" }}>
-      {/* Hero */}
+      {/* Hero — split layout */}
       <section style={{ position: "relative", overflow: "hidden" }}>
-        <div className="container-px" style={{ ...containerWide, position: "relative", zIndex: 10, paddingTop: 80, paddingBottom: 64 }}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+        <div className="container-px hero-grid" style={{ ...containerWide, position: "relative", zIndex: 10, paddingTop: 80, paddingBottom: 80, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+          {/* Left — text */}
+          <div>
             {/* Badge */}
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 999, background: "var(--accent-light)", border: "1px solid color-mix(in srgb, var(--accent) 12%, transparent)", marginBottom: 32, fontSize: 12, fontWeight: 500, color: "var(--accent)", letterSpacing: "0.02em" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 999, background: "var(--accent-light)", border: "1px solid color-mix(in srgb, var(--accent) 12%, transparent)", marginBottom: 28, fontSize: 12, fontWeight: 500, color: "var(--accent)", letterSpacing: "0.02em" }}>
               <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--accent)" }} />
               {roadmapMeta.length} career paths available
             </div>
 
             {/* Heading */}
-            <h1 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", lineHeight: 1.1, marginBottom: 20, maxWidth: 600 }}>
+            <h1 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(34px, 5vw, 56px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", lineHeight: 1.1, marginBottom: 20 }}>
               Your next role,<br />mapped out.
             </h1>
 
             {/* Subtitle */}
-            <p className="hero-subtitle" style={{ fontSize: 17, color: "var(--muted)", maxWidth: 480, marginBottom: 36, lineHeight: 1.7 }}>
+            <p className="hero-subtitle" style={{ fontSize: 16, color: "var(--muted)", maxWidth: 420, marginBottom: 32, lineHeight: 1.7 }}>
               Concise roadmaps for {roadmapMeta.length} roles. Tools, frameworks, and skills — in the order you actually need them.
             </p>
 
             {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 48 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 12, marginBottom: 36 }}>
               <Link
                 href="/roadmaps"
                 className="btn-cta"
@@ -107,27 +108,31 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Hero Image */}
-            <div className="hero-image-wrapper">
-              <Image
-                src="/hero.png"
-                alt="Career roadmap visualization"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 720px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-
             {/* Category pills */}
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 48 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
               {categories.map((cat) => (
-                <span key={cat.name} className={cat.color} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 12px", borderRadius: 8, fontSize: 12, fontWeight: 500 }}>
+                <span key={cat.name} className={cat.color} style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "5px 11px", borderRadius: 8, fontSize: 12, fontWeight: 500 }}>
                   {cat.name}
                   <span style={{ opacity: 0.45 }}>{cat.count}</span>
                 </span>
               ))}
             </div>
+          </div>
+
+          {/* Right — image with overlay */}
+          <div className="hero-image-panel" style={{ position: "relative", borderRadius: 20, overflow: "hidden", aspectRatio: "4 / 3", minHeight: 360 }}>
+            <Image
+              src="/hero.png"
+              alt="Career roadmap visualization"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 500px"
+              style={{ objectFit: "cover" }}
+            />
+            {/* Dark overlay */}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 100%)" }} />
+            {/* Subtle accent tint */}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top right, color-mix(in srgb, var(--accent) 20%, transparent), transparent 60%)" }} />
           </div>
         </div>
       </section>
