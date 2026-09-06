@@ -113,6 +113,12 @@ body {
   animation: hero-image-in 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.hero-image-panel img {
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 75%);
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.06));
+}
+
 /* ===== Gradient text — subtle, solid feel ===== */
 .gradient-text {
   color: var(--accent);

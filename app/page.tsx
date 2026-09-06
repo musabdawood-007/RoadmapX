@@ -119,20 +119,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — image with overlay */}
-          <div className="hero-image-panel" style={{ position: "relative", borderRadius: 20, overflow: "hidden", aspectRatio: "4 / 3", minHeight: 360 }}>
+          {/* Right — dissolved image */}
+          <div className="hero-image-panel" style={{ position: "relative", aspectRatio: "4 / 3", minHeight: 360, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Image
               src="/hero.png"
               alt="Career roadmap visualization"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 500px"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
-            {/* Dark overlay */}
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 100%)" }} />
-            {/* Subtle accent tint */}
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top right, color-mix(in srgb, var(--accent) 20%, transparent), transparent 60%)" }} />
           </div>
         </div>
       </section>
