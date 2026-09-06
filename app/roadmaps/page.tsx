@@ -85,7 +85,7 @@ export default function RoadmapsPage() {
             </svg>
             <span style={{ color: "var(--foreground)" }}>Browse</span>
           </div>
-          <h1 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(26px, 4vw, 34px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", marginBottom: 8 }}>Browse Roadmaps</h1>
+          <h1 style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: "clamp(26px, 4vw, 34px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", marginBottom: 8 }}>Browse Roadmaps</h1>
           <p style={{ fontSize: 14, color: "var(--muted)", maxWidth: 460 }}>
             {roadmapMeta.length} career paths across {categories.length - 1} categories. Find the right path for your next move.
           </p>

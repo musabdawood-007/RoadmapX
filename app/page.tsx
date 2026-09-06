@@ -78,7 +78,7 @@ export default function Home() {
             </div>
 
             {/* Heading */}
-            <h1 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(34px, 5vw, 56px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", lineHeight: 1.1, marginBottom: 20 }}>
+            <h1 style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: "clamp(34px, 5vw, 56px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", lineHeight: 1.1, marginBottom: 20 }}>
               Your next role,<br />mapped out.
             </h1>
 
@@ -152,7 +152,7 @@ export default function Home() {
       <section className="section-padding" style={{ ...containerWide, paddingBottom: 96 }}>
         <div className="featured-header" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 32 }}>
           <div>
-            <h2 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: 28, fontWeight: 400, fontStyle: "italic", marginBottom: 4 }}>Start Here</h2>
+            <h2 style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: 28, fontWeight: 400, fontStyle: "italic", marginBottom: 4 }}>Start Here</h2>
             <p style={{ fontSize: 14, color: "var(--muted)" }}>Popular paths to get you going</p>
           </div>
           <Link
@@ -234,7 +234,7 @@ export default function Home() {
       <section style={{ ...containerWide, padding: "72px 24px" }}>
         <div className="cta-banner" style={{ position: "relative", overflow: "hidden", borderRadius: 18, background: "var(--accent)", padding: "56px 40px", textAlign: "center" }}>
           <div style={{ position: "relative", zIndex: 10 }}>
-            <h2 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(22px, 3.5vw, 34px)", fontWeight: 400, fontStyle: "italic", color: "white", letterSpacing: "-0.01em", marginBottom: 14 }}>
+            <h2 style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: "clamp(22px, 3.5vw, 34px)", fontWeight: 400, fontStyle: "italic", color: "white", letterSpacing: "-0.01em", marginBottom: 14 }}>
               Ready to start learning?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, maxWidth: 440, margin: "0 auto 28px", lineHeight: 1.65, padding: "0 16px" }}>

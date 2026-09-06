@@ -67,7 +67,7 @@ export default function RoadmapPage({ params }: { params: Promise<{ id: string }
           <div className="roadmap-header-meta" style={{ display: "flex", alignItems: "flex-start", gap: 20, marginBottom: 20 }}>
             <span style={{ fontSize: 48 }}>{roadmap.icon}</span>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <h1 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(24px, 5vw, 32px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", marginBottom: 8 }}>{roadmap.title}</h1>
+              <h1 style={{ fontFamily: "var(--font-fraunces), Georgia, serif", fontSize: "clamp(24px, 5vw, 32px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", marginBottom: 8 }}>{roadmap.title}</h1>
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
                 <span className={`diff-${roadmap.difficulty.toLowerCase()}`} style={{ fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", padding: "3px 8px", borderRadius: 6 }}>
                   {roadmap.difficulty}
