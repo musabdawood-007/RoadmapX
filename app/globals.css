@@ -114,9 +114,7 @@ body {
 }
 
 .hero-image-panel img {
-  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 75%);
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.06));
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
 }
 
 /* ===== Gradient text — subtle, solid feel ===== */
