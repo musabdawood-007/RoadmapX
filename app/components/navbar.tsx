@@ -66,9 +66,9 @@ export default function Navbar() {
     <nav style={nav}>
       <div style={inner}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 600, fontSize: 15, letterSpacing: "-0.01em", textDecoration: "none", color: "var(--foreground)" }}>
-          <span style={{ width: 30, height: 30, borderRadius: 8, background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
-            <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503-.75a2.4 2.4 0 01-2.884 2.436l-.503-.145a2.4 2.4 0 00-1.242.145l-.503.145a2.4 2.4 0 01-2.884-2.436l.503-3.014a2.4 2.4 0 00-.145-1.242l-.145-.503a2.4 2.4 0 012.436-2.884l3.014.503a2.4 2.4 0 001.242.145l.503-.145a2.4 2.4 0 012.884 2.436l-.503 3.014a2.4 2.4 0 00.145 1.242l.145.503a2.4 2.4 0 01-2.436 2.884l-3.014-.503a2.4 2.4 0 00-1.242-.145" />
+          <span style={{ display: "flex", alignItems: "center", justifyContent: "center", color: "var(--accent)" }}>
+            <svg style={{ width: 22, height: 22 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
             </svg>
           </span>
           <span>RoadmapX</span>
