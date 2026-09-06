@@ -55,8 +55,8 @@ export default function RoadmapPage({ params }: { params: Promise<{ id: string }
   return (
     <div style={{ minHeight: "100vh" }}>
       {/* Header */}
-      <div style={{ borderBottom: "1px solid var(--card-border)", background: "color-mix(in srgb, var(--card) 50%, transparent)" }}>
-        <div className="container-px" style={{ ...container, padding: "48px 24px" }}>
+      <div style={{ borderBottom: "1px solid var(--card-border)" }}>
+        <div className="container-px" style={{ ...container, padding: "40px 24px" }}>
           <Link href="/roadmaps" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, color: "var(--muted)", textDecoration: "none", marginBottom: 24 }}>
             <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -67,9 +67,9 @@ export default function RoadmapPage({ params }: { params: Promise<{ id: string }
           <div className="roadmap-header-meta" style={{ display: "flex", alignItems: "flex-start", gap: 20, marginBottom: 20 }}>
             <span style={{ fontSize: 48 }}>{roadmap.icon}</span>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <h1 style={{ fontSize: "clamp(24px, 5vw, 32px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: 8 }}>{roadmap.title}</h1>
+              <h1 style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontSize: "clamp(24px, 5vw, 32px)", fontWeight: 400, fontStyle: "italic", letterSpacing: "-0.01em", marginBottom: 8 }}>{roadmap.title}</h1>
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
-                <span className={`diff-${roadmap.difficulty.toLowerCase()}`} style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", padding: "4px 10px", borderRadius: 999 }}>
+                <span className={`diff-${roadmap.difficulty.toLowerCase()}`} style={{ fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", padding: "3px 8px", borderRadius: 6 }}>
                   {roadmap.difficulty}
                 </span>
                 <span style={{ fontSize: 14, color: "var(--muted)", display: "flex", alignItems: "center", gap: 6 }}>
@@ -143,7 +143,7 @@ export default function RoadmapPage({ params }: { params: Promise<{ id: string }
                       <h3 style={{ fontSize: 16, fontWeight: 600, color: done ? "var(--success)" : "var(--foreground)", textDecoration: done ? "line-through" : "none", textDecorationColor: done ? "color-mix(in srgb, var(--success) 40%, transparent)" : "transparent", margin: 0, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {step.label}
                       </h3>
-                      <span style={{ fontSize: 10, fontFamily: "var(--font-geist-mono)", color: "var(--muted)", background: "color-mix(in srgb, var(--card-border) 60%, transparent)", padding: "2px 8px", borderRadius: 6, flexShrink: 0 }}>
+                       <span style={{ fontSize: 10, fontFamily: "var(--font-jetbrains-mono)", color: "var(--muted)", background: "color-mix(in srgb, var(--card-border) 60%, transparent)", padding: "2px 8px", borderRadius: 6, flexShrink: 0 }}>
                         {step.tool}
                       </span>
                       <svg
@@ -185,14 +185,14 @@ export default function RoadmapPage({ params }: { params: Promise<{ id: string }
 
       {/* Footer */}
       <footer style={{ background: "var(--background)" }}>
-        <div className="container-px" style={{ maxWidth: 768, margin: "0 auto", padding: "40px 24px", display: "flex", flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 8 }}>
+        <div className="container-px" style={{ maxWidth: 768, margin: "0 auto", padding: "32px 24px", display: "flex", flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 8 }}>
           <span style={{ fontSize: 12, color: "var(--muted)" }}>
-            © 2026 Copyright by{" "}
-            <a href="https://musab-projects.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 600 }}>
+            &copy; 2026 Copyright by{" "}
+            <a href="https://musab-projects.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 500 }}>
               Musab Projects
             </a>
           </span>
-          <span style={{ fontSize: 12, color: "var(--muted)" }}>•</span>
+          <span style={{ fontSize: 12, color: "var(--muted)" }}>&middot;</span>
           <span style={{ fontSize: 12, color: "var(--muted)", fontStyle: "italic" }}>More roadmaps coming soon</span>
         </div>
       </footer>

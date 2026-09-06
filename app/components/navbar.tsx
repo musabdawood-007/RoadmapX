@@ -10,9 +10,9 @@ const nav: React.CSSProperties = {
   top: 0,
   zIndex: 50,
   borderBottom: "1px solid var(--card-border)",
-  background: "color-mix(in srgb, var(--background) 80%, transparent)",
-  backdropFilter: "blur(16px)",
-  WebkitBackdropFilter: "blur(16px)",
+  background: "color-mix(in srgb, var(--background) 85%, transparent)",
+  backdropFilter: "blur(12px)",
+  WebkitBackdropFilter: "blur(12px)",
 };
 
 const inner: React.CSSProperties = {
@@ -20,17 +20,17 @@ const inner: React.CSSProperties = {
   margin: "0 auto",
   paddingLeft: 24,
   paddingRight: 24,
-  height: 56,
+  height: 52,
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
 };
 
 const navLink = (active: boolean): React.CSSProperties => ({
-  padding: "8px 16px",
+  padding: "6px 14px",
   borderRadius: 8,
   fontSize: 14,
-  fontWeight: 500,
+  fontWeight: active ? 600 : 400,
   color: active ? "var(--accent)" : "var(--muted)",
   background: active ? "var(--accent-light)" : "transparent",
   textDecoration: "none",
@@ -38,8 +38,8 @@ const navLink = (active: boolean): React.CSSProperties => ({
 });
 
 const themeBtn: React.CSSProperties = {
-  width: 36,
-  height: 36,
+  width: 34,
+  height: 34,
   borderRadius: 8,
   display: "flex",
   alignItems: "center",
@@ -65,8 +65,8 @@ export default function Navbar() {
   return (
     <nav style={nav}>
       <div style={inner}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 700, fontSize: 16, letterSpacing: "-0.01em", textDecoration: "none", color: "var(--foreground)" }}>
-          <span style={{ width: 32, height: 32, borderRadius: 8, background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: 12, fontWeight: 900, boxShadow: "0 4px 12px color-mix(in srgb, var(--accent) 20%, transparent)" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 600, fontSize: 15, letterSpacing: "-0.01em", textDecoration: "none", color: "var(--foreground)" }}>
+          <span style={{ width: 30, height: 30, borderRadius: 8, background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: 12, fontWeight: 700 }}>
             R
           </span>
           <span>RoadmapX</span>
@@ -78,12 +78,12 @@ export default function Navbar() {
           <Link href="/roadmaps" style={navLink(isBrowse)}>Browse</Link>
           <button onClick={toggle} style={{ ...themeBtn, marginLeft: 8 }} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
             {theme === "dark" ? (
-              <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg style={{ width: 15, height: 15 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <circle cx="12" cy="12" r="5" />
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
               </svg>
             ) : (
-              <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg style={{ width: 15, height: 15 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             )}
@@ -94,18 +94,18 @@ export default function Navbar() {
         <div className="mobile-controls" style={{ alignItems: "center", gap: 4 }}>
           <button onClick={toggle} style={themeBtn} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
             {theme === "dark" ? (
-              <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg style={{ width: 15, height: 15 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <circle cx="12" cy="12" r="5" />
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
               </svg>
             ) : (
-              <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg style={{ width: 15, height: 15 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             )}
           </button>
           <button onClick={() => setMobileOpen(!mobileOpen)} style={themeBtn} aria-label="Toggle menu">
-            <svg style={{ width: 20, height: 20 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg style={{ width: 18, height: 18 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
             </svg>
           </button>
@@ -114,10 +114,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
-        <Link href="/" style={{ display: "block", width: "100%", padding: "14px 16px", borderRadius: 12, fontSize: 16, fontWeight: 500, color: isHome ? "var(--accent)" : "var(--foreground)", background: isHome ? "var(--accent-light)" : "transparent", textDecoration: "none", transition: "all 0.2s" }}>
+        <Link href="/" style={{ display: "block", width: "100%", padding: "12px 16px", borderRadius: 10, fontSize: 15, fontWeight: isHome ? 600 : 400, color: isHome ? "var(--accent)" : "var(--foreground)", background: isHome ? "var(--accent-light)" : "transparent", textDecoration: "none", transition: "all 0.2s" }}>
           Home
         </Link>
-        <Link href="/roadmaps" style={{ display: "block", width: "100%", padding: "14px 16px", borderRadius: 12, fontSize: 16, fontWeight: 500, color: isBrowse ? "var(--accent)" : "var(--foreground)", background: isBrowse ? "var(--accent-light)" : "transparent", textDecoration: "none", transition: "all 0.2s" }}>
+        <Link href="/roadmaps" style={{ display: "block", width: "100%", padding: "12px 16px", borderRadius: 10, fontSize: 15, fontWeight: isBrowse ? 600 : 400, color: isBrowse ? "var(--accent)" : "var(--foreground)", background: isBrowse ? "var(--accent-light)" : "transparent", textDecoration: "none", transition: "all 0.2s" }}>
           Browse
         </Link>
       </div>
