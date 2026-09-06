@@ -314,7 +314,6 @@ body {
   }
 
   .hero-image-panel {
-    order: -1;
     aspect-ratio: 16 / 9;
     min-height: 220px !important;
   }
