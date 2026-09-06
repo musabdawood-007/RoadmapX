@@ -66,8 +66,10 @@ export default function Navbar() {
     <nav style={nav}>
       <div style={inner}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 600, fontSize: 15, letterSpacing: "-0.01em", textDecoration: "none", color: "var(--foreground)" }}>
-          <span style={{ width: 30, height: 30, borderRadius: 8, background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: 12, fontWeight: 700 }}>
-            R
+          <span style={{ width: 30, height: 30, borderRadius: 8, background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
+            <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503-.75a2.4 2.4 0 01-2.884 2.436l-.503-.145a2.4 2.4 0 00-1.242.145l-.503.145a2.4 2.4 0 01-2.884-2.436l.503-3.014a2.4 2.4 0 00-.145-1.242l-.145-.503a2.4 2.4 0 012.436-2.884l3.014.503a2.4 2.4 0 001.242.145l.503-.145a2.4 2.4 0 012.884 2.436l-.503 3.014a2.4 2.4 0 00.145 1.242l.145.503a2.4 2.4 0 01-2.436 2.884l-3.014-.503a2.4 2.4 0 00-1.242-.145" />
+            </svg>
           </span>
           <span>RoadmapX</span>
         </Link>
